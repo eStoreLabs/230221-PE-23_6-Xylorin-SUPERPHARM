@@ -65,7 +65,7 @@
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-kv {
-    background-size: 86%;
+    background-size: 77%;
     background-position: right top;
     height: 500px;
   }
@@ -77,6 +77,11 @@
   width: 33%;
   max-width: 120px;
   margin: auto;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__logo {
+    max-width: 150px;
+  }
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-kv__packshot {
