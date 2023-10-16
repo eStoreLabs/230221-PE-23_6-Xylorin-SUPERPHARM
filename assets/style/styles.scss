@@ -54,6 +54,9 @@
 $yellow--main: #ffd416;
 $blue--accent: #44c0eb;
 $blue--main: #023b76;
+$red: #dc2536;
+$purple: #944293;
+$blue: #0074be;
 
 $ff--main: "myriad-pro", sans-serif;
 $ff--accent: "urw-din", sans-serif;
@@ -200,6 +203,67 @@ $fs--italic: italic;
             @include font($ff--main, $fw--regular, $fs--normal);
             font-size: 1.3rem;
             text-align: center;
+        }
+    }
+    .es-features {
+        overflow: hidden;
+        &__title-wrapper {
+            background-image: url(/assets/images/features-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 67%;
+            min-height: 400px;
+            
+            @media (min-width: 768px) {
+                background-position: center;
+            }
+        }
+        &__title {
+            color: #FFF;
+            @include font($ff--accent, $fw--bold, $fs--italic);
+            font-size: 1.5rem;
+            padding: 2rem;
+            padding-top: 4rem;
+            text-transform: uppercase;
+            max-width: 85%;
+            @media (min-width: 768px) {
+                max-width: 69%;
+                font-size: 2.3rem;
+                padding-top: 5rem;
+            }
+        }
+        
+        &__packshot-container {
+            padding: 2rem;
+        }
+        &__single {
+            @include font($ff--main, $fw--regular, $fs--italic);
+            border-bottom: 2px solid $red;
+            max-width: 80%;
+            padding-block: 1rem;
+            margin: auto;
+            &--bold {
+                font-weight: $fw--bold;
+            }
+        }
+        &__packshot {
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: -46px;
+        }
+        &__icons {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding: 2rem;
+        }
+        &__icon-single {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        &__icon {
+            max-width: 64px;
         }
     }
 }
