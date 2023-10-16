@@ -1,0 +1,161 @@
+@import url("https://use.typekit.net/xhp6szu.css");
+
+/* css reset for eRetailers */
+#es-rc #es-rc-content *,
+#es-rc #es-rc-content *:before,
+#es-rc #es-rc-content *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+#es-rc #es-rc-content h1,
+#es-rc #es-rc-content h2,
+#es-rc #es-rc-content h3,
+#es-rc #es-rc-content h4,
+#es-rc #es-rc-content h5,
+#es-rc #es-rc-content h6,
+#es-rc #es-rc-content p {
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: 100%;
+    margin: 0;
+
+}
+
+#es-rc #es-rc-content table,
+#es-rc #es-rc-content thead,
+#es-rc #es-rc-content tbody,
+#es-rc #es-rc-content tr,
+#es-rc #es-rc-content th,
+#es-rc #es-rc-content td {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+#es-rc #es-rc-content img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#es-rc #es-rc-content ul li {
+    list-style: none;
+}
+
+#es-rc #es-rc-content ol li {
+    list-style: arabic;
+}
+
+/* variables */
+$yellow--main: #ffd416;
+$blue--accent: #44c0eb;
+$blue--main: #023b76;
+
+$ff--main: "myriad-pro", sans-serif;
+$ff--accent: "urw-din", sans-serif;
+$fw--regular: 400;
+$fw--bold: 700;
+$fs--normal: normal;
+$fs--italic: italic;
+
+/* fonts */
+@mixin font($family, $weight, $style) {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+/* main styles */
+
+#es-rc #es-rc-content {
+    max-width: 769px;
+    margin: auto;
+    background-color: $yellow--main;
+    color: $blue--main;
+    font-family: $ff--main;
+    .es-kv {
+        background: url(../images/kv-bg.png) no-repeat;
+        background-size: 215%;
+        background-position: right 20% top 0%;
+
+        &__logo {
+            width: 33%;
+            max-width: 120px;
+            margin: auto;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -50px;
+        }
+
+        &__title-wrapper {
+            font-family: $ff--accent;
+            text-align: center;
+            font-style: italic;
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__subtitle {
+            font-size: 1.5rem;
+        }
+
+        &__flex-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        &__single {
+
+            display: grid;
+            grid-template-columns: 66px 1fr;
+            align-items: center;
+            gap: 1rem;
+        }
+        &__icon {
+            justify-self: center;
+        }
+
+        &__text {
+            @include font($ff--main, $fw--regular, $fs--italic);
+            font-size: 1.2rem;
+
+            &--bold {
+                font-weight: $fw--bold;
+            }
+        }
+
+    }
+    .es-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        gap: 2rem;
+        &__single {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        &__icon {
+            max-width: 84px;
+        }
+        &__text {
+            @include font($ff--main, $fw--regular, $fs--regular);
+            font-size: 1.5rem;
+        }
+    }
+}
