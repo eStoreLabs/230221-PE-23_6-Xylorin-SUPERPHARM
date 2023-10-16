@@ -81,24 +81,45 @@ $fs--italic: italic;
         background: url(../images/kv-bg.png) no-repeat;
         background-size: 215%;
         background-position: right 20% top 0%;
+        @media (min-width: 768px) {
+            background-size: 86%;
+            background-position: right top;
+            height: 500px;
+            .es-kv__desktop-wrapper {
+                display: flex;
+            }
+        }
 
         &__logo {
             width: 33%;
             max-width: 120px;
             margin: auto;
         }
-
+        &__packshot {
+            @media (min-width: 768px) {
+                width: 45%;
+            }
+        }
         &__wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: -50px;
+            @media (min-width: 768px) {
+                margin-top: 36px;
+                margin-left: -103px;
+                align-items: flex-start;
+            }
         }
 
         &__title-wrapper {
             font-family: $ff--accent;
             text-align: center;
             font-style: italic;
+            @media (min-width: 768px) {
+                text-align: left;
+                margin-bottom: 1rem;
+            }
         }
 
         &__title {
@@ -107,6 +128,9 @@ $fs--italic: italic;
 
         &__subtitle {
             font-size: 1.5rem;
+            @media (min-width: 768px) {
+                margin-left: 1.5rem;
+            }
         }
 
         &__flex-container {
@@ -115,22 +139,32 @@ $fs--italic: italic;
             flex-wrap: wrap;
             gap: 2rem;
             padding: 2rem;
+            @media (min-width: 768px) {
+                gap: 0.5rem;
+                padding: 0;
+            }
         }
 
         &__single {
-
             display: grid;
             grid-template-columns: 66px 1fr;
             align-items: center;
             gap: 1rem;
+            @media (min-width: 768px) {
+                width: 100%;
+                height: 54px;
+            }
         }
         &__icon {
             justify-self: center;
+            @media (min-width: 768px) {
+                scale: 0.6;
+            }
         }
 
         &__text {
             @include font($ff--main, $fw--regular, $fs--italic);
-            font-size: 1.2rem;
+            font-size: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
             &--bold {
                 font-weight: $fw--bold;
@@ -144,18 +178,25 @@ $fs--italic: italic;
         align-items: center;
         padding: 2rem;
         gap: 2rem;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
         &__single {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            @media (min-width: 768px) {
+                flex-basis: 33%;
+            }
         }
         &__icon {
             max-width: 84px;
         }
         &__text {
-            @include font($ff--main, $fw--regular, $fs--regular);
-            font-size: 1.5rem;
+            @include font($ff--main, $fw--regular, $fs--normal);
+            font-size: 1.3rem;
+            text-align: center;
         }
     }
 }

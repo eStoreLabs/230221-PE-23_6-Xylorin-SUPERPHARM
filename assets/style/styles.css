@@ -63,10 +63,25 @@
   background-size: 215%;
   background-position: right 20% top 0%;
 }
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv {
+    background-size: 86%;
+    background-position: right top;
+    height: 500px;
+  }
+  #es-rc #es-rc-content .es-kv .es-kv__desktop-wrapper {
+    display: flex;
+  }
+}
 #es-rc #es-rc-content .es-kv__logo {
   width: 33%;
   max-width: 120px;
   margin: auto;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__packshot {
+    width: 45%;
+  }
 }
 #es-rc #es-rc-content .es-kv__wrapper {
   display: flex;
@@ -74,16 +89,34 @@
   align-items: center;
   margin-top: -50px;
 }
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__wrapper {
+    margin-top: 36px;
+    margin-left: -103px;
+    align-items: flex-start;
+  }
+}
 #es-rc #es-rc-content .es-kv__title-wrapper {
   font-family: "urw-din", sans-serif;
   text-align: center;
   font-style: italic;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__title-wrapper {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
 }
 #es-rc #es-rc-content .es-kv__title {
   font-size: 3rem;
 }
 #es-rc #es-rc-content .es-kv__subtitle {
   font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__subtitle {
+    margin-left: 1.5rem;
+  }
 }
 #es-rc #es-rc-content .es-kv__flex-container {
   display: flex;
@@ -92,20 +125,37 @@
   gap: 2rem;
   padding: 2rem;
 }
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__flex-container {
+    gap: 0.5rem;
+    padding: 0;
+  }
+}
 #es-rc #es-rc-content .es-kv__single {
   display: grid;
   grid-template-columns: 66px 1fr;
   align-items: center;
   gap: 1rem;
 }
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__single {
+    width: 100%;
+    height: 54px;
+  }
+}
 #es-rc #es-rc-content .es-kv__icon {
   justify-self: center;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__icon {
+    scale: 0.6;
+  }
 }
 #es-rc #es-rc-content .es-kv__text {
   font-family: "myriad-pro", sans-serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 }
 #es-rc #es-rc-content .es-kv__text--bold {
   font-weight: 700;
@@ -114,11 +164,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-about {
+    flex-direction: row;
+  }
 }
 #es-rc #es-rc-content .es-about__single {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-about__single {
+    flex-basis: 33%;
+  }
 }
 #es-rc #es-rc-content .es-about__icon {
   max-width: 84px;
@@ -126,5 +189,7 @@
 #es-rc #es-rc-content .es-about__text {
   font-family: "myriad-pro", sans-serif;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
+  font-size: 1.3rem;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
