@@ -315,6 +315,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
         &__icon-single {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 1.5rem;
 
@@ -322,6 +323,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
                 gap: 3rem;
                 max-width: 80%;
                 margin: auto;
+                flex-direction: row;
             }
         }
 
@@ -335,6 +337,42 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
         &__text {
             font-size: 1.3rem;
+        }
+    }
+
+    .es-video {
+        padding: 2rem;
+         position: relative;
+
+         &:after {
+                content: "";
+                width: 87%;
+                height: 50px;
+                display: block;
+                position: absolute;
+                background-color: $blue--accent;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%) rotate(1deg);
+                -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+-moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+                z-index: 0;
+            }
+        &__wrapper {
+            -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+-moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        &__iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            z-index: 2;
+            overflow: hidden;
         }
     }
 }
