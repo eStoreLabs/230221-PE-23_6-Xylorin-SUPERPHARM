@@ -47,7 +47,7 @@
 }
 
 #es-rc #es-rc-content ol li {
-    list-style: arabic;
+    list-style: none;
 }
 
 #es-rc #es-rc-content sup {
@@ -345,17 +345,16 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     .es-video {
         padding: 1rem;
         position: relative;
-
+        z-index: 1;
         &:after {
             content: "";
             width: 87%;
             height: 50px;
             display: block;
-            position: absolute;
+            //position: absolute;
             background-color: $blue--accent;
-            bottom: 10px;
-            left: 50%;
-            transform: translate(-50%) rotate(1deg);
+            
+            transform: translate(9%, -72%) rotate(1deg);
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
@@ -385,12 +384,20 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
     .es-cross {
         background-color: $blue--background;
-        margin-top: -57px;
+        margin-top: -163px;
         color: #FFF;
-
+        padding-inline: 1rem;
         padding-top: calc(57px + 3rem);
+        padding-bottom: 1rem;
         text-align: center;
+        position: relative;
 
+        @media (min-width: 768px) {
+            padding-inline: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        
         &__title {
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.5rem;
@@ -402,6 +409,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     /* responsive, scrollable table */
     .es-cross__table {
         overflow-x: auto;
+        overflow-y: hidden;
         width: 100%;
         display: grid;
 
@@ -414,72 +422,209 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
 
     .es-cross__table-row {
         display: grid;
-        grid-template-columns: 150px repeat(2, 1fr);
+        grid-template-columns: 115px repeat(2, 175px);
         gap: 10px;
+
+        @media (min-width: 555px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
+
 
     .es-cross__table-cell {
         padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 10px;
 
+        @media (min-width: 555px) {
+            padding: 1rem;
+        }
     }
 
     .es-cross__fixed {
         position: sticky;
-        outline: 1px solid red;
         background-color: $blue--background;
         left: 0;
         z-index: 1;
     }
 
     /* other cross sell styles */
+    .es-cross__table-row:not(:nth-of-type(1), :nth-last-of-type(1)) {
+        border-bottom: 1px solid #FFF;
+    }
+
     .es-cross__table-header {
         @include font($ff--main, $fw--bold, $fs--normal);
         background-color: $blue--table-bg;
     }
+
     .es-cross__product {
         flex-direction: column;
         gap: 0.7rem;
         padding-bottom: 1rem;
+        justify-content: space-between;
     }
-    // .es-cross__img {
-    //     height: 230px;
-    //     width: auto;
-    // }
 
     .es-cross__tag {
         border-radius: 99px;
-        padding: 0.3rem 0.6rem;
+        padding: 0.2rem 0.4rem;
 
     }
+
     .es-cross__name {
         @include font($ff--main, $fw--bold, $fs--normal);
         font-size: 1.3rem;
     }
+
     .es-cross__table button {
         border-radius: 99px;
         border: none;
     }
+
     .es-cross__button {
         @include font($ff--main, $fw--bold, $fs--normal);
         background-color: $yellow--main;
         padding: 0.4rem 0.8rem;
         font-size: 1.1rem;
         color: $blue--main;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #c9a711;
+        }
     }
-    
+
+    .es-cross__table-cell--main {
+        background-color: $blue--table-bg;
+
+    }
+
+    .es-cross__icon {
+        max-width: 38px;
+        max-height: 42px;
+    }
 
     .es-cross__text--bold {
         display: block;
-    }.es-cross__info {
-        display: block;
     }
+
+    .es-cross__info {
+        display: block;
+        margin-block: 10px;
+        
+        &--exclamation {
+           position: relative; 
+           &:after {
+             content: "!";
+             @include font($ff--main, $fw--bold, $fs--normal);
+             text-shadow: -5px 1px 0px rgba(255, 255, 255, 1);
+             position: absolute;
+             font-size: 130px;
+             color: $yellow--main;
+             transform: translate(-50%, -50%);
+             bottom: -60%;
+             left: -2%;
+             @media (min-width: 768px) {
+                 bottom: -72%;
+             }
+         }
+        }
+         
+    }
+
+
     .es-cross__purple {
         background-color: $purple;
+        position: relative;
+
     }
+
     .es-cross__blue {
         background-color: $blue;
+    }
+
+    .es-references {
+        background-color: $blue--main;
+        color: #FFF;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @media (min-width: 768px) {
+            padding: 2rem;
+        }
+
+        .es-list ol {
+            list-style: none;
+            counter-reset: es-counter;
+        }
+
+        .es-list ol li {
+            counter-increment: es-counter;
+            font-size: 0.8rem;
+        }
+
+        .es-list ol li::before {
+            content: counter(es-counter);
+            vertical-align: top;
+            position: relative;
+            top: -0.5em;
+            font-size: 0.8em;
+        }
+
+        &__MAT {
+            font-size: 1rem;
+        }
+
+        &__text {
+            font-size: 0.8rem;
+            text-align: justify;
+            text-justify: inter-word;
+
+            &--bold {
+                font-weight: $fw--bold;
+            }
+        }
+
+        &__warning {
+            font-size: 2rem;
+            @include font($ff--main, $fw--regular, $fs--normal);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: $yellow--main $blue--table-bg;
+    }
+
+    /* Chrome, Edge and Safari */
+    *::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: $blue--table-bg;
+    }
+
+
+    *::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #FFD416;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: #E4BE14;
+    }
+
+    *::-webkit-scrollbar-thumb:active {
+        background-color: #E4BE14;
     }
 }
