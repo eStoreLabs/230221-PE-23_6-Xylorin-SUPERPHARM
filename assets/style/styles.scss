@@ -82,6 +82,78 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     font-style: $style;
 }
 
+/* animations */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation pulsate-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
 /* main styles */
 
 #es-rc #es-rc-content {
@@ -346,6 +418,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         padding: 1rem;
         position: relative;
         z-index: 1;
+
         &:after {
             content: "";
             width: 87%;
@@ -353,7 +426,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             display: block;
             //position: absolute;
             background-color: $blue--accent;
-            
+
             transform: translate(9%, -72%) rotate(1deg);
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
@@ -397,7 +470,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
             padding-bottom: 2rem;
         }
 
-        
+
         &__title {
             @include font($ff--accent, $fw--bold, $fs--italic);
             font-size: 1.5rem;
@@ -464,9 +537,16 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
         flex-direction: column;
         gap: 0.7rem;
         padding-bottom: 1rem;
-        justify-content: space-between;
+        justify-content: flex-end;
+       
     }
-
+    .es-cross__img {
+        scale: 1.0;
+        transition: all 0.2ms ease-in-out;
+        &:hover {
+            transform: scale(1.01);
+        }
+    }
     .es-cross__tag {
         border-radius: 99px;
         padding: 0.2rem 0.4rem;
@@ -513,25 +593,29 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     .es-cross__info {
         display: block;
         margin-block: 10px;
-        
+
         &--exclamation {
-           position: relative; 
-           &:after {
-             content: "!";
-             @include font($ff--main, $fw--bold, $fs--normal);
-             text-shadow: -5px 1px 0px rgba(255, 255, 255, 1);
-             position: absolute;
-             font-size: 130px;
-             color: $yellow--main;
-             transform: translate(-50%, -50%);
-             bottom: -60%;
-             left: -2%;
-             @media (min-width: 768px) {
-                 bottom: -72%;
-             }
-         }
+            position: relative;
+
+            &:after {
+                content: "!";
+                @include font($ff--main, $fw--bold, $fs--normal);
+                text-shadow: -5px 1px 0px rgba(255, 255, 255, 1);
+                position: absolute;
+                font-size: 130px;
+                color: $yellow--main;
+                bottom: -19%;
+                left: -12%;
+                -webkit-animation: pulsate-bck 1s ease-in-out infinite alternate both;
+                animation: pulsate-bck 1s ease-in-out infinite alternate both;
+
+                @media (min-width: 768px) {
+                    bottom: -23%;
+                    left: -9%;
+                }
+            }
         }
-         
+
     }
 
 
@@ -546,7 +630,7 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     }
 
     .es-references {
-        background-color: $blue--main;
+        background-color: $blue--background;
         color: #FFF;
         padding: 1rem;
         display: flex;

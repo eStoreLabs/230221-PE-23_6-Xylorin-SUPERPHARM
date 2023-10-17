@@ -57,6 +57,40 @@
 
 /* variables */
 /* fonts */
+/* animations */
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 0s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation pulsate-bck
+ * ----------------------------------------
+ */
+@keyframes pulsate-bck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* main styles */
 #es-rc #es-rc-content {
   max-width: 769px;
@@ -422,7 +456,14 @@
   flex-direction: column;
   gap: 0.7rem;
   padding-bottom: 1rem;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+#es-rc #es-rc-content .es-cross__img {
+  scale: 1;
+  transition: all 0.2ms ease-in-out;
+}
+#es-rc #es-rc-content .es-cross__img:hover {
+  transform: scale(1.01);
 }
 #es-rc #es-rc-content .es-cross__tag {
   border-radius: 99px;
@@ -477,13 +518,14 @@
   position: absolute;
   font-size: 130px;
   color: #ffd416;
-  transform: translate(-50%, -50%);
-  bottom: -60%;
-  left: -2%;
+  bottom: -19%;
+  left: -12%;
+  animation: pulsate-bck 1s ease-in-out infinite alternate both;
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-cross__info--exclamation:after {
-    bottom: -72%;
+    bottom: -23%;
+    left: -9%;
   }
 }
 #es-rc #es-rc-content .es-cross__purple {
@@ -494,7 +536,7 @@
   background-color: #0074be;
 }
 #es-rc #es-rc-content .es-references {
-  background-color: #023b76;
+  background-color: #1f357d;
   color: #FFF;
   padding: 1rem;
   display: flex;
