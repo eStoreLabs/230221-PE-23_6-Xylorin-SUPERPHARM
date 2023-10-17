@@ -64,6 +64,8 @@
   background-color: #ffd416;
   color: #023b76;
   font-family: "myriad-pro", sans-serif;
+  /* responsive, scrollable table */
+  /* other cross sell styles */
 }
 #es-rc #es-rc-content .es-kv {
   background: url(../images/kv-bg.png) no-repeat;
@@ -313,7 +315,7 @@
   font-size: 1.3rem;
 }
 #es-rc #es-rc-content .es-video {
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
 }
 #es-rc #es-rc-content .es-video:after {
@@ -329,6 +331,11 @@
   box-shadow: 8px 8px 24px -5px rgb(0, 0, 0);
   z-index: 0;
 }
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-video {
+    padding: 2rem;
+  }
+}
 #es-rc #es-rc-content .es-video__wrapper {
   box-shadow: 8px 8px 24px -5px rgb(0, 0, 0);
   position: relative;
@@ -340,4 +347,91 @@
   aspect-ratio: 16/9;
   z-index: 2;
   overflow: hidden;
+}
+#es-rc #es-rc-content .es-cross {
+  background-color: #1f357d;
+  margin-top: -57px;
+  color: #FFF;
+  padding-top: calc(57px + 3rem);
+  text-align: center;
+}
+#es-rc #es-rc-content .es-cross__title {
+  font-family: "urw-din", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 2rem;
+}
+#es-rc #es-rc-content .es-cross__table {
+  overflow-x: auto;
+  width: 100%;
+  display: grid;
+}
+#es-rc #es-rc-content .es-cross__table-body {
+  display: contents;
+}
+#es-rc #es-rc-content .es-cross__table-row {
+  display: grid;
+  grid-template-columns: 150px repeat(2, 1fr);
+  gap: 10px;
+}
+#es-rc #es-rc-content .es-cross__table-cell {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#es-rc #es-rc-content .es-cross__fixed {
+  position: sticky;
+  outline: 1px solid red;
+  background-color: #1f357d;
+  left: 0;
+  z-index: 1;
+}
+#es-rc #es-rc-content .es-cross__table-header {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #3c4f8e;
+}
+#es-rc #es-rc-content .es-cross__product {
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-bottom: 1rem;
+}
+#es-rc #es-rc-content .es-cross__tag {
+  border-radius: 99px;
+  padding: 0.3rem 0.6rem;
+}
+#es-rc #es-rc-content .es-cross__name {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+#es-rc #es-rc-content .es-cross__table button {
+  border-radius: 99px;
+  border: none;
+}
+#es-rc #es-rc-content .es-cross__button {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #ffd416;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+  color: #023b76;
+}
+#es-rc #es-rc-content .es-cross__text--bold {
+  display: block;
+}
+#es-rc #es-rc-content .es-cross__info {
+  display: block;
+}
+#es-rc #es-rc-content .es-cross__purple {
+  background-color: #944293;
+}
+#es-rc #es-rc-content .es-cross__blue {
+  background-color: #0074be;
 }/*# sourceMappingURL=styles.css.map */

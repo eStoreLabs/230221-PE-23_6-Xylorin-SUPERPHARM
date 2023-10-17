@@ -61,6 +61,8 @@
 $yellow--main: #ffd416;
 $blue--accent: #44c0eb;
 $blue--main: #023b76;
+$blue--background: #1f357d;
+$blue--table-bg: #3c4f8e;
 $red: #dc2536;
 $purple: #944293;
 $blue: #0074be;
@@ -341,28 +343,33 @@ $size--normal: clamp(1.2rem, 0.9783rem + 1.0435vw, 1.5rem);
     }
 
     .es-video {
-        padding: 2rem;
-         position: relative;
+        padding: 1rem;
+        position: relative;
 
-         &:after {
-                content: "";
-                width: 87%;
-                height: 50px;
-                display: block;
-                position: absolute;
-                background-color: $blue--accent;
-                bottom: 10px;
-                left: 50%;
-                transform: translate(-50%) rotate(1deg);
-                -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
--moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
-                z-index: 0;
-            }
+        &:after {
+            content: "";
+            width: 87%;
+            height: 50px;
+            display: block;
+            position: absolute;
+            background-color: $blue--accent;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%) rotate(1deg);
+            -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            padding: 2rem;
+        }
+
         &__wrapper {
             -webkit-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
--moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
+            box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -374,5 +381,105 @@ box-shadow: 8px 8px 24px -5px rgba(0, 0, 0, 1);
             z-index: 2;
             overflow: hidden;
         }
+    }
+
+    .es-cross {
+        background-color: $blue--background;
+        margin-top: -57px;
+        color: #FFF;
+
+        padding-top: calc(57px + 3rem);
+        text-align: center;
+
+        &__title {
+            @include font($ff--accent, $fw--bold, $fs--italic);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 2rem;
+        }
+    }
+
+    /* responsive, scrollable table */
+    .es-cross__table {
+        overflow-x: auto;
+        width: 100%;
+        display: grid;
+
+    }
+
+    .es-cross__table-body {
+        display: contents;
+
+    }
+
+    .es-cross__table-row {
+        display: grid;
+        grid-template-columns: 150px repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .es-cross__table-cell {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .es-cross__fixed {
+        position: sticky;
+        outline: 1px solid red;
+        background-color: $blue--background;
+        left: 0;
+        z-index: 1;
+    }
+
+    /* other cross sell styles */
+    .es-cross__table-header {
+        @include font($ff--main, $fw--bold, $fs--normal);
+        background-color: $blue--table-bg;
+    }
+    .es-cross__product {
+        flex-direction: column;
+        gap: 0.7rem;
+        padding-bottom: 1rem;
+    }
+    // .es-cross__img {
+    //     height: 230px;
+    //     width: auto;
+    // }
+
+    .es-cross__tag {
+        border-radius: 99px;
+        padding: 0.3rem 0.6rem;
+
+    }
+    .es-cross__name {
+        @include font($ff--main, $fw--bold, $fs--normal);
+        font-size: 1.3rem;
+    }
+    .es-cross__table button {
+        border-radius: 99px;
+        border: none;
+    }
+    .es-cross__button {
+        @include font($ff--main, $fw--bold, $fs--normal);
+        background-color: $yellow--main;
+        padding: 0.4rem 0.8rem;
+        font-size: 1.1rem;
+        color: $blue--main;
+    }
+    
+
+    .es-cross__text--bold {
+        display: block;
+    }.es-cross__info {
+        display: block;
+    }
+    .es-cross__purple {
+        background-color: $purple;
+    }
+    .es-cross__blue {
+        background-color: $blue;
     }
 }
