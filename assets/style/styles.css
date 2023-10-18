@@ -453,14 +453,18 @@
   background-color: #3c4f8e;
 }
 #es-rc #es-rc-content .es-cross__product {
-  flex-direction: column;
-  gap: 0.7rem;
-  padding-bottom: 1rem;
-  justify-content: flex-end;
+  align-items: flex-end;
   background-size: 92% 72%;
   background-position: -1px -4px;
   background-repeat: no-repeat;
   background-image: radial-gradient(50% 50% at 50% 50%, #1498e9 0%, rgba(7, 58, 255, 0) 100%);
+}
+#es-rc #es-rc-content .es-cross__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: #FFF;
 }
 #es-rc #es-rc-content .es-cross__img {
   scale: 1;
